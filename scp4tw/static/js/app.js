@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
 import 'bulma'  // css
+import 'fa'
 
 import App from './vue/App.vue'
 

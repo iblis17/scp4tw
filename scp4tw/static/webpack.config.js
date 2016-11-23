@@ -17,6 +17,7 @@ module.exports = {
     fallback: [path.join(__dirname, 'node_modules')],
     alias: {
       bulma: path.resolve(__dirname, 'node_modules/bulma/css/bulma.css'),
+      fa: path.resolve(__dirname, './node_modules/font-awesome/css/font-awesome.min.css')
     }
   },
   module: {
@@ -36,6 +37,10 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url-loader',
+      },
+      {
+        test: /\.(png|jpg|gif|woff|woff2|eot|ttf|svg)\?.*$/,
         loader: 'url-loader',
       },
     ]
