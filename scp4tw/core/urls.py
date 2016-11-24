@@ -16,9 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from center.views import index
+from center.views import index, opencc_view
 
 urlpatterns = [
     url(r'^$', index),
     url(r'^admin/', admin.site.urls),
+    url(r'^opencc/(?P<id>[\w]+)/$', opencc_view),
 ]

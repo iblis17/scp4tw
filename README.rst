@@ -12,4 +12,4 @@ Dev Setup
 
 
     npm install -g webpack
-    webpack  # or webpack --progress --colors --watch
+    npm run dev
