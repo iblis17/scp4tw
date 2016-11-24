@@ -1,14 +1,14 @@
 scp4tw
 ===============================================================================
 
-Simple `scp-wik-.cn<http://scp-wiki-cn.wikidot.com>`_ browser with bolt-on
+Simple `scp-wik-.cn <http://scp-wiki-cn.wikidot.com>`_ browser with bolt-on
 OpenCC.
 
 
 Dev Setup
 ----------------------------------------------------------------------
 
-Install `OpenCC<https://github.com/BYVoid/OpenCC>`_ first.
+Install `OpenCC <https://github.com/BYVoid/OpenCC>`_ first.
 
 ::
 
