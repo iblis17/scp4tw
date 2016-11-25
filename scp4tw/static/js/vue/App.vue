@@ -6,14 +6,22 @@
         p.control.has-addons.has-addons-centered
           input.input(
             placeholder="SCP number"
-            v-model="scpNo")
+            v-model="scpNo"
+            v-on:keyup.enter="opencc"
+          )
           a.button.is-primary(
             v-on:click="opencc") OpenCC
         p.control.has-addons.has-addons-centered
-          a.button(v-bind:href="openccURL")
+          a.button(
+            v-bind:href="openccURL"
+            v-bind:class="{'is-disabled': openccURL === ''}"
+          )
             span.icon.is-small
               i.fa.fa-link
-          a.button(v-bind:href="url")
+          a.button(
+            v-bind:href="url"
+            v-bind:class="{'is-disabled': scpNo === ''}"
+          )
             span.icon.is-small
               i.fa.fa-external-link
       .box.opencc-box
@@ -39,7 +47,7 @@ export default {
       const base = 'http://scp-wiki-cn.wikidot.com/scp-'
 
       if (this.scpNo === '')
-        return base
+        return `${base}{number}`
 
       return `${base}${this.scpNo}`
     },
