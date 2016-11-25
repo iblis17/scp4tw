@@ -1,24 +1,21 @@
 <template lang="pug">
   section.section
     .container
-      // .columns
-      //   .column.is-2
-
-      // nav.menu
-      //   ul.menu-list
-      //     li
-      //       a.is-active
-      //         span.icon
-      //           i.fa.fa-home
-      //         | Home
       .box
+        h2.title.is-4.has-text-centered {{ url }}
         p.control.has-addons.has-addons-centered
           input.input(
             placeholder="SCP number"
             v-model="scpNo")
           a.button.is-primary(
             v-on:click="opencc") OpenCC
-        p.has-text-centered {{ url }}
+        p.control.has-addons.has-addons-centered
+          a.button(v-bind:href="openccURL")
+            span.icon.is-small
+              i.fa.fa-link
+          a.button(v-bind:href="url")
+            span.icon.is-small
+              i.fa.fa-external-link
       .box.opencc-box
         p.has-text-centered(v-if="openccURL === ''") 你在想尛？
         object(
@@ -29,7 +26,6 @@
 
 <script>
 import $ from 'jquery'
-
 
 export default {
   data() {
@@ -42,7 +38,7 @@ export default {
     url() {
       const base = 'http://scp-wiki-cn.wikidot.com/scp-'
 
-      if (! this.scpNo )
+      if (this.scpNo === '')
         return base
 
       return `${base}${this.scpNo}`
