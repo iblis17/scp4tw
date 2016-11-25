@@ -21,5 +21,5 @@ from center.views import index, opencc_view
 urlpatterns = [
     url(r'^$', index),
     url(r'^admin/', admin.site.urls),
-    url(r'^opencc/(?P<id>[\w]+)/$', opencc_view),
+    url(r'^opencc/(?P<id>[\w-]+)/$', opencc_view),
 ]
